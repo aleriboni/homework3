@@ -1,4 +1,4 @@
-# homework3
+# Homework3
 
 University of Verona - IT department - Computer Science
 
@@ -12,6 +12,7 @@ git clone https://github.com/aleriboni/homework3.git
 ```
 
 ## Clone modified version of ORB_SLAM2
+Clone in your catkin workspace:
 ```
 git clone https://github.com/aleriboni/ORB_SLAM2.git
 ```
@@ -23,7 +24,8 @@ This function save in a .txt file the coordinates of points and I used 'create_p
 After that, I used 'clustering.cpp' to cluster the cloud based on the Euclidean distance.
 I tried different configurations for 'setClusterTolerance' and 'setMinClusterSize' but, in my opinion, for having the best result to cluster the 3d reconstruction of the rosbag V1_01_easy.bag from the EuRoC dataset is set the minimum cluster size of 40 and the tollerance of 0.15.
 
-## Compile:
+
+## Compile
 
 After cloning git going to "homework3" directory and use this command:
 ```
@@ -33,6 +35,7 @@ cmake ..
 make
 ```
 You will find the executables in bin/
+
 
 ## Save map by a .bag file
 
@@ -60,6 +63,7 @@ Press CTRL+C to save .txt map and exit:
 ![imageORBSLAM2](image/terminal.png)
 
 
+
 ## Convert map in my_pointcloud.pcd
 Copy the map into /homework3/bin and move there:
 ```
@@ -83,4 +87,4 @@ Alessandro Riboni | alessandro.riboni@studenti.univr.it
 
 ## Disclaimer
 
-homework3 is provided without any warranty about its usability. It is for educational purposes and should be regarded as such.
+Homework3 is provided without any warranty about its usability. It is for educational purposes and should be regarded as such.
