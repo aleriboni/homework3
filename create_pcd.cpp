@@ -49,8 +49,8 @@ int
     i++;
 	}
 
-  pcl::io::savePCDFileASCII ("test_pcd.pcd", cloud);
-  std::cerr << "Saved " << cloud.points.size () << " data points to test_pcd.pcd." << std::endl;
+  pcl::io::savePCDFileASCII ("my_pointcloud.pcd", cloud);
+  std::cerr << "Saved " << cloud.points.size () << " data points to my_pointcloud.pcd." << std::endl;
 
   for (size_t i = 0; i < cloud.points.size (); ++i)
     std::cerr << "    " << cloud.points[i].x << " " << cloud.points[i].y << " " << cloud.points[i].z << std::endl;

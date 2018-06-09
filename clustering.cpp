@@ -10,11 +10,12 @@ int main(int argc, char **argv)
                                       subsamp_cloud(new pcl::PointCloud<pcl::PointXYZ> ());
 
   // Load a cloud from file
-  if ( pcl::io::loadPCDFile( "test_pcd.pcd", *in_cloud ) < 0)
+  if (pcl::io::loadPCDFile(argv[1], *in_cloud) == -1)
   {
-    std::cout << "Error loading model cloud." << std::endl;
+    PCL_ERROR ("Couldn't read file .pcd \n");
     return (-1);
   }
+
 
   // Downsample the cloud
   pcl::VoxelGrid<pcl::PointXYZ> voxel_grid;
@@ -30,8 +31,8 @@ int main(int argc, char **argv)
   // Divides the point cloud into smaller, correlated, parts (clusters)
   pcl::EuclideanClusterExtraction<pcl::PointXYZ> ec;
   // Set distance threshold
-  ec.setClusterTolerance (0.2);
-  ec.setMinClusterSize (50);
+  ec.setClusterTolerance (0.15);
+  ec.setMinClusterSize (40);
   //ec.setMaxClusterSize (2500);
   // Set the KD tree that will be used to look for points neighbors
   ec.setSearchMethod (tree);
